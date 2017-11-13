@@ -1,0 +1,19 @@
+pc [10]
+	+1 compiles
+	+1 compiles with no warnings
+	+8 works
+
+pcMC  [10]
+smoke [10]
+wash  [10]
+pcS   [10]
+washS [10] (BONUS)
+	8   runs and synchronizes with no deadlock but small problems
+	7   deadlocks but code inspection reveals that nearly got synchronization right
+	6   basic structure of synchronization correct but several problems
+	4   significant errors using synchronization primitives, but still uses them
+	3-0 for failure to use synchronization primitives at all or in anywhere near a correct way
+NOTEs:
+	- Script just checks for correct output
+	- So you need to quickly check the use of synchronization primitives
+	- Spend 30 to 60 seconds and then put student in one of the buckets above
