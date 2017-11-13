@@ -1,0 +1,32 @@
+q1s - comments in q1.s [10]
+  +7 comments of some form on most code lines
+  +3 high-level comments on every code line (at most 2 lines with no comments)
+
+q1c - code in q1.c [10]
+  +2 for each line
+
+q1m - memory counts [10]
+  +3 wrong read count but good description
+  +4 correct read count
+  +1 wrong write count but good description
+  +2 correct write count
+
+stk - fixed bug in stack.c [10]
+  +7 correct output / dangling pointer fixed
+  +3 valgrind pass / no memory leak
+
+stkD - description of bug in stack.c [10]
+  +10 identifies where bug is and correctly describes it as dangling pointer
+
+lsTr - fixed bug in list.c/tree.c using reference counts [20]
+  +2  correct output for adding one item
+  +2  correct ouput for adding two and deleting one
+  +8  correct output for all cases
+  +8  valgrind pass
+  -16 if did not use reference counts (to minimum of 0)
+
+lsTrD - description of bug in list.c/tree.c [10]
+  +6 stating that problem is that list_delete_elements creates a dangling pointer
+  +2 stating that dangling pointer accessed in tree_order_suffix_print
+     or describing the procedure without naming it
+  +2 for either saying something to explain what actually prints or to say why refcounting is good here

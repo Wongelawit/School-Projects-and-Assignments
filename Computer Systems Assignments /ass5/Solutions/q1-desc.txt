@@ -1,0 +1,22 @@
+Here's the code:
+  v0 = a->x[i];
+  v1 = a->b.y[i];
+  v2 = a->b.a->x[i];
+  a->b.a = a;
+  v3 = a->b.a->b.y[i];
+
+Reads:
+	i
+	a
+	a->x
+	a->x[i]
+	a->b.y[i]
+	a->b.a
+	a->b.a->x
+	a->b.a->x[i]
+
+It is okay if you also list the following read and have a count of 9.  This read is unnecessary if you realize that a->b.a is a and thus a->b.a->b.y[i] is a->b.y[i], which has already been read.
+	a->b.a->b.y[i] 
+
+Writes:
+	v1, v1, v2, v3, and a->b.a

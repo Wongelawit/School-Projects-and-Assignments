@@ -1,0 +1,17 @@
+The following are the result from tRead.c 
+
+time ./tRead 10
+real 0m0.022s
+sys 0m0.016s
+
+time ./tRead 100
+real 0m0.065s
+sys 0m0.060s
+
+time ./tRead 1000
+real 0m0.541s
+sys 0m0.532s
+
+We noticed that tRead.c runs much faster than sRead.c but slightly slower than aRead.c. We also noticed that even though tRead.c runs almost the same as aRead.c for smaller disk read, it becomes slower as the number increases. The reason why it is slower than aRead.c is because the disk read reads block of disk sequential.But then there are multiple threads for the disk which allows it to run faster than sRead.c.
+Another interesting observation is that, sometime tRead.c is slower than both tRead.c and sRead.c and the reason is, because it it uses multiple threads it uses the system a lot. 
+
